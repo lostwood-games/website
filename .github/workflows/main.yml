@@ -11,7 +11,7 @@ env:
   
 jobs:
   ci:
-    name: Lint and Generate Website
+    name: CI
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -30,13 +30,13 @@ jobs:
       - uses: actions/upload-artifact@v2
         with:
           name: ${{ env.DIST_FOLDER }}
-          path: src/dist
+          path: src/.output/public
           if-no-files-found: error
 
   cd:
     runs-on: ubuntu-latest
     name: Deploy to Azure Static Web App
-    needs: ci
+    needs: CD
     steps:
       - uses: actions/download-artifact@v2
         with:
