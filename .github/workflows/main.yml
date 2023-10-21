@@ -35,8 +35,8 @@ jobs:
 
   cd:
     runs-on: ubuntu-latest
-    name: Deploy to Azure Static Web App
-    needs: CD
+    name: CD
+    needs: ci
     steps:
       - uses: actions/download-artifact@v2
         with:
