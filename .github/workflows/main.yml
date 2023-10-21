@@ -11,7 +11,7 @@ env:
   
 jobs:
   ci:
-    name: CI, Lint, Unit Tests and Build
+    name: Lint and Generate Website
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -31,6 +31,7 @@ jobs:
 
   cd:
     runs-on: ubuntu-latest
+    name: Deploy to Azure Static Web App
     needs: ci
     steps:
       - uses: actions/download-artifact@v2
