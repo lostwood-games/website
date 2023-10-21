@@ -24,7 +24,7 @@ jobs:
       - run: pnpm install
         working-directory: src
       - run: pnpm run generate
-         working-directory: src
+        working-directory: src
       - uses: actions/upload-artifact@v2
         with:
           name: ${{ env.DIST_FOLDER }}
