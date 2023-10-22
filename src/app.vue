@@ -1,6 +1,4 @@
 <template>
-  <div>
-    — Oliver, is that you?
-    <AnalyticsConsent />
-  </div>
+  <NuxtPage />
+  <AnalyticsConsent />
 </template>
